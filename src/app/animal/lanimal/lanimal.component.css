@@ -1,0 +1,47 @@
+.barra{
+    background-color: #7ed957;
+}
+
+.letra1{
+    color: white;
+    font-weight: bold;
+}
+
+.logo{
+    margin-top: 100px;
+}
+
+.boton_menu{
+    margin-top: 20px;
+    margin-left: 15px;
+    color:  #7ed957;
+    background-color: white;
+    font-weight: bold;
+}
+
+.boton_guardar{
+
+    color:  #7ed957;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+.options{
+
+    color:  black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.destacado{
+    font-weight: bold;
+    color: #7ed957;
+
+}
+
+.alejar{
+    margin-right: 50px;
+}
+

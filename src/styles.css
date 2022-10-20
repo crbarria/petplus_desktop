@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.barra{
+    height: 100vh;
+    background-color: #7ed957;
+}
+
+.letras1{
+
+    color: white;
+    font-weight: bold;
+
+}
+
+.centro{
+    margin:0 auto;
+    margin-top:15%;
+    padding: 0;
+}

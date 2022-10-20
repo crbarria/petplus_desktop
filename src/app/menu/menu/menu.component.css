@@ -1,0 +1,27 @@
+.barra{
+    background-color: #7ed957;
+}
+
+.letra1{
+    color: white;
+    font-weight: bold;
+}
+
+.logo{
+    margin-top: 100px;
+}
+
+.boton_menu{
+    margin-top: 20px;
+    margin-left: 15px;
+    color:  #7ed957;
+    background-color: white;
+    font-weight: bold;
+}
+
+.imagen1{
+    margin-left: 250px;
+    margin-top: 40px;
+}
+
+
