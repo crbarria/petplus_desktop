@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar barra w3-bar-block" style="width:15%">
+    <section class="letra1">
+        <img src="https://i.postimg.cc/R0qSW-vfF/01.png" width="250" height="250" class="d-inline-block align-center"
+            alt="" loading="lazy" style="margin-top: 100px;">
+        <br>
+        <br>
+        <h1 class="letra1">¡Bienvenido Usuari@!</h1>
+        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+    </section>
+</div>
+
+
+
+
+
+<div style="margin-left:15%">
+
+    <div class="w3-container">
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Numero procedimiento</th>
+                    <th scope="col">Nombre procedimiento</th>
+              
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let procedimientos of procelist">
+                    <th scope="row"> <img src="https://cdn-icons-png.flaticon.com/512/1043/1043138.png" alt=""
+                            width="60" height="60" class="d-inline-block align-center" alt="" loading="lazy"></th>
+
+                    <td>{{procedimientos.id_procedimiento}}</td>
+
+                    <td>{{procedimientos.nombre_procedimiento}}</td>
+
+                    <br>
+                    <button class="btn btn-danger" type="button">Eliminar</button>
+
+            </tbody>
+        </table>
+
+    
+    <!--Se agrega un nuevo procedimiento-->
+   
+    <form (ngSubmit)="onSubmit()">
+
+
+        <h1 class="">Añadir un nuevo procedimiento</h1>
+
+        <label for="nombre_procedimiento"> </label>
+        <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text"
+          id="nombre_procedimiento" required [(ngModel)]="model.nombre_procedimiento" name="nombre_procedimiento" #name="ngModel"
+          style="margin-right: 50px;" />
+            
+        <button>Añadir procedimiento</button>
+    
+
+
+    </form>
+    
+</div>
+
+
+</div>

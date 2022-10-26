@@ -9,11 +9,17 @@ import { AnimalModule } from './animal/animal.module';
 import { MenuModule } from './menu/menu.module';
 import { FormsModule } from '@angular/forms';
 import { LanimalComponent } from './animal/lanimal/lanimal.component';
+import { AnimaldosModule } from './animaldos/animaldos.module';
+import { BuscaranimalComponent } from './animaldos/buscaranimal/buscaranimal.component';
+import { ProcedimientoModule } from './procedimiento/procedimiento.module';
+import { ListproceComponent } from './procedimiento/listproce/listproce.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LanimalComponent
+    LanimalComponent,
+    BuscaranimalComponent,
+    ListproceComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,9 @@ import { LanimalComponent } from './animal/lanimal/lanimal.component';
     AnimalModule,
     MenuModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AnimaldosModule,
+    ProcedimientoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

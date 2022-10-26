@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar barra w3-bar-block" style="width:15%">
+  <section class="letra1">
+    <img src="https://i.postimg.cc/R0qSW-vfF/01.png" width="250" height="250" class="d-inline-block align-center" alt=""
+      loading="lazy" style="margin-top: 100px;">
+    <br>
+    <br>
+    <h1 class="letra1">¡Bienvenido Usuari@!</h1>
+    <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+  </section>
+</div>
+
+
+<!-- Page Content -->
+
+
+<div style="margin-left:15%">
+
+  <br>
+
+  <h1 class="destacado">Ingrese la ficha del animal</h1>
+  <input [(ngModel)]="buscar_input2" type="text" name="" id="">
+  <button (click)="buscar()" class="btn btn-primary boton_guardar" type="submit">Buscar</button>
+
+
+  <br>
+  <!--Se guarda el dueño -->
+  <h1 class="destacado">Datos del dueño</h1>
+  <div>
+    <form>
+
+
+      <div class="">
+
+        <label for="nombre_completo"> </label>
+
+        <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text" id="nombre_completo"
+          name="nombre_completo" style="margin-right: 50px;" value={{nombre_dueno}} />
+
+        <label for="telefono"> </label>
+        <input placeholder="Ingrese número de telefono" class="form-control" class="col-3" type="text" id="telefono"
+          name="telefono" value={{duenotelefono}} />
+
+      </div>
+      <label for="correo"> </label>
+      <input placeholder="Ingrese el correo electronico" class="form-control" class="col-3" type="text" id="correo"
+        name="correo" style="margin-top: 30px;" value={{duenocorreo}} />
+      <br>
+      <br>
+      <button class="btn btn-primary boton_guardar" type="submit">Modificar</button>
+
+    </form>
+
+    <!--Se modifica un animal-->
+
+    <h1 class="destacado">Datos del animal</h1>
+
+    <form>
+
+      <label for="nombre"> </label>
+      <input class="form-control" class="col-3" placeholder="Ingrese el nombre del animal" type="text" id="nombre"
+        value={{nombreanimal}} name="nombre" style="margin-right: 50px;" />
+
+      <label for="n_microchip"> </label>
+      <input class="form-control" class="col-3" placeholder="Ingrese el numero de microchip" type="text"
+        value={{n_microchip}} id="n_microchip" name="n_microchip" style="margin-right: 30px;" />
+
+
+      <select style="margin-right: 30px;" class="options" name="dueno_id_dueno_id">
+        <option> Seleccione el dueño</option>
+        <option value={{duenos.id_dueno}} *ngFor="let duenos of duenolist">
+          {{duenos.nombre_completo}}
+        </option>
+      </select>
+
+
+      <select class="options" name="color_id_color_id" (change)="cambiarcolor($event)">
+        <option>Seleccione un color</option>
+        <option value={{colores.id_color}} *ngFor="let colores of coloreslist">
+
+          {{colores.color}}
+        </option>
+      </select>
+
+      <br>
+      <br>
+
+      <select style="margin-right: 30px;" class="options" name="especie_id_especie_id">
+        <option>Seleccione la especie </option>
+        <option value={{especies.id_especie}} *ngFor="let especies of especielist">
+
+          {{especies.nombre_especie}}
+        </option>
+      </select>
+
+
+      <select style="margin-right: 30px;" class="options" name="estado_id_estado_id">
+        <option>Seleccione un estado</option>
+        <option value={{estados.id_estado}} *ngFor="let estados of estadolist">
+
+          {{estados.estado}}
+        </option>
+      </select>
+
+      <select class="options" name="sexo_id_sexo_id">
+        <option>Seleccione el genero</option>
+        <option value={{sexos.id_sexo}} *ngFor="let sexos of sexolist">
+
+          {{sexos.sexo}}
+        </option>
+      </select>
+
+      <br>
+      <br>
+      <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
+    </form>
+
+
+
+  </div>
