@@ -15,15 +15,25 @@ export class ProcedimientoService {
 
   constructor(private http: HttpClient) { }
 
+//Metodo Get
 
   getprocedimiento():Observable<Procedimiento[]>{
     return this.http.get<Procedimiento[]>(this.URLprocedimiento)
   }
 
 
+//Metodo post
 
   crearprocedimiento(procedimiento : Procedimiento):Observable<Procedimiento>{
     return this.http.post<Procedimiento>(this.URLprocedimiento, procedimiento)
   }
+
+
+//Metodo delete
+
+deleteprocedimiento(id_procedimiento:number):Observable<Procedimiento>{
+  return this.http.delete<Procedimiento>(this.URLprocedimiento+id_procedimiento)
+}
+  
 
 }

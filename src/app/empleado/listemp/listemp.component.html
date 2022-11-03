@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar barra w3-bar-block" style="width:15%">
+    <section class="letra1">
+        <img src="https://i.postimg.cc/R0qSW-vfF/01.png" width="250" height="250" class="d-inline-block align-center"
+            alt="" loading="lazy" style="margin-top: 100px;">
+        <br>
+        <br>
+        <h1 class="letra1">¡Bienvenido Usuari@!</h1>
+        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+    </section>
+</div>
+
+
+
+
+
+<div style="margin-left:15%">
+
+    <div class="w3-container">
+
+        <form>
+            <h1 class="destacado">Añadir un nuevo empleado</h1>
+
+            <br>
+            <br>
+
+            <form (ngSubmit)="onSubmit()">
+
+                <label for="nombre_empleado"> </label>
+                <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text"
+                    id="nombre_empleado" required [(ngModel)]="model.nombre_empleado" name="nombre_empleado"
+                    #name="ngModel" style="margin-right: 50px;" />
+
+
+
+                <select style="margin-right: 30px;" class="options" name="tipo_empleado_id_tipo_empleado_id"
+                    [(ngModel)]="model.tipo_empleado_id_tipo_empleado_id" (change)="cambiartipoemp($event)">
+                    <option> Seleccione el cargo</option>
+                    <option value={{tipo.id_tipo_emp}} *ngFor="let tipo of listtipoemp">
+                        {{tipo.nombre_tipo_emp}}
+                    </option>
+                </select>
+
+
+
+                <button class="boton_guardar" >Añadir Empleado</button>
+
+
+
+            </form>
+
+
+
+        </form>
+
+
+        <br>
+        <br>
+
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Numero empleado</th>
+                    <th scope="col">Nombre empleado</th>
+                    <th scope="col">Eliminar</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emps of emplist">
+
+
+                    <td>{{emps.id_emp}}</td>
+
+                    <td>{{emps.nombre_empleado}}</td>
+
+                    <br>
+                    <button (click)="eliminaremp(emps)" class="btn boton-eliminar" type="button">Eliminar</button>
+
+            </tbody>
+        </table>
+
+
+        <!--Se agrega un nuevo procedimiento-->
+        <br>
+        
+
+    </div>
+
+
+</div>

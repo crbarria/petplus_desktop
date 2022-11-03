@@ -13,13 +13,17 @@ import { AnimaldosModule } from './animaldos/animaldos.module';
 import { BuscaranimalComponent } from './animaldos/buscaranimal/buscaranimal.component';
 import { ProcedimientoModule } from './procedimiento/procedimiento.module';
 import { ListproceComponent } from './procedimiento/listproce/listproce.component';
+import { EmpleadoModule } from './empleado/empleado.module';
+import { ListempComponent } from './empleado/listemp/listemp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LanimalComponent,
     BuscaranimalComponent,
-    ListproceComponent
+    ListproceComponent,
+    ListempComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,8 @@ import { ListproceComponent } from './procedimiento/listproce/listproce.componen
     HttpClientModule,
     FormsModule,
     AnimaldosModule,
-    ProcedimientoModule
+    ProcedimientoModule,
+    EmpleadoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

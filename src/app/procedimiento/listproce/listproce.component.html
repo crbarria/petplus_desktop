@@ -21,53 +21,59 @@
 
     <div class="w3-container">
 
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Numero procedimiento</th>
-                    <th scope="col">Nombre procedimiento</th>
-              
+        <!--Se agrega un nuevo procedimiento-->
 
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let procedimientos of procelist">
-                    <th scope="row"> <img src="https://cdn-icons-png.flaticon.com/512/1043/1043138.png" alt=""
-                            width="60" height="60" class="d-inline-block align-center" alt="" loading="lazy"></th>
+        <h1 class="destacado">Añadir un nuevo procedimiento</h1>
 
-                    <td>{{procedimientos.id_procedimiento}}</td>
+        <br>
+        <br>
 
-                    <td>{{procedimientos.nombre_procedimiento}}</td>
+        <form (ngSubmit)="onSubmit()">
 
-                    <br>
-                    <button class="btn btn-danger" type="button">Eliminar</button>
+            <label for="nombre_procedimiento"> </label>
+            <input placeholder="Ingrese nombre del procedimiento" class="form-control" class="col-2" type="text"
+                id="nombre_procedimiento" required [(ngModel)]="model.nombre_procedimiento" name="nombre_procedimiento"
+                #name="ngModel" style="margin-right: 50px;" />
 
-            </tbody>
-        </table>
-
-    
-    <!--Se agrega un nuevo procedimiento-->
-   
-    <form (ngSubmit)="onSubmit()">
+            <button class="boton_guardar" >Añadir procedimiento</button>
 
 
-        <h1 class="">Añadir un nuevo procedimiento</h1>
 
-        <label for="nombre_procedimiento"> </label>
-        <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text"
-          id="nombre_procedimiento" required [(ngModel)]="model.nombre_procedimiento" name="nombre_procedimiento" #name="ngModel"
-          style="margin-right: 50px;" />
-            
-        <button>Añadir procedimiento</button>
-    
+        </form>
+
+        <br>
+        <br>   
+        <section>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">N° procedimiento</th>
+                        <th scope="col">Nombre procedimiento</th>
+                        <th scope="col">Eliminar</th>
 
 
-    </form>
-    
-</div>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let procedimientos of procelist">
+
+
+                        <td>{{procedimientos.id_procedimiento}}</td>
+
+                        <td>{{procedimientos.nombre_procedimiento}}</td>
+
+                        <br>
+                        <button (click)="eliminarproce(procedimientos)" class="btn boton-eliminar"
+                            type="button">Eliminar</button>
+
+                </tbody>
+            </table>
+
+        </section>
+
+    </div>
 
 
 </div>

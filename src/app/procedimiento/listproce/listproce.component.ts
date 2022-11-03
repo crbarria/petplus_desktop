@@ -40,5 +40,8 @@ export class ListproceComponent implements OnInit {
 
   }
 
+  eliminarproce(procedimiento : Procedimiento){
+    this.proceservice.deleteprocedimiento(procedimiento.id_procedimiento).subscribe();
+  }
 
 }

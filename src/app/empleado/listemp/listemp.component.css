@@ -25,7 +25,6 @@
     background-color: white;
     font-weight: bold;
     border-radius: 5px;
-    size: 10px;
 }
 
 
@@ -47,11 +46,10 @@
 }
 
 .btn-danger{
-    
+    color: red;
 }
 
 .boton-eliminar{
     background-color: red;
     color: white;
 }
-
