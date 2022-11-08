@@ -15,6 +15,10 @@ import { ProcedimientoModule } from './procedimiento/procedimiento.module';
 import { ListproceComponent } from './procedimiento/listproce/listproce.component';
 import { EmpleadoModule } from './empleado/empleado.module';
 import { ListempComponent } from './empleado/listemp/listemp.component';
+import { LoginModule } from './login/login.module';
+import { InicioComponent } from './login/inicio/inicio.component';
+import { HorasModule } from './horas/horas.module';
+import { ListhorasComponent } from './horas/listhoras/listhoras.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { ListempComponent } from './empleado/listemp/listemp.component';
     LanimalComponent,
     BuscaranimalComponent,
     ListproceComponent,
-    ListempComponent
+    ListempComponent,
+    InicioComponent,
+    ListhorasComponent
     
   ],
   imports: [
@@ -34,7 +40,9 @@ import { ListempComponent } from './empleado/listemp/listemp.component';
     FormsModule,
     AnimaldosModule,
     ProcedimientoModule,
-    EmpleadoModule
+    EmpleadoModule,
+    LoginModule,
+    HorasModule
   ],
   providers: [],
   bootstrap: [AppComponent]

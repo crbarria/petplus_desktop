@@ -16,3 +16,7 @@
     margin-top:15%;
     padding: 0;
 }
+
+.backgr{
+    background-image: url("assets/image/back.jpg");
+}
