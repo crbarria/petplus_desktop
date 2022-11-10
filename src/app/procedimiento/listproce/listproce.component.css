@@ -21,9 +21,9 @@
 
 .boton_guardar{
 
-    color:  #18246e;
-    background-color: white;
-    font-weight: bold;
+    background-color:  #18246e;
+    color: white;
+    
     border-radius: 5px;
     size: 10px;
 }

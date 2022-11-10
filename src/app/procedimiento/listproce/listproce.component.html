@@ -49,7 +49,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">N° procedimiento</th>
+                        <th  scope="col">N° procedimiento</th>
                         <th scope="col">Nombre procedimiento</th>
                         <th scope="col">Eliminar</th>
 
@@ -60,9 +60,9 @@
                     <tr *ngFor="let procedimientos of procelist">
 
 
-                        <td>{{procedimientos.id_procedimiento}}</td>
+                        <td class="negritas">{{procedimientos.id_procedimiento}}</td>
 
-                        <td>{{procedimientos.nombre_procedimiento}}</td>
+                        <td class="negritas">{{procedimientos.nombre_procedimiento}}</td>
 
                         <br>
                         <button (click)="eliminarproce(procedimientos)" class="btn boton-eliminar"

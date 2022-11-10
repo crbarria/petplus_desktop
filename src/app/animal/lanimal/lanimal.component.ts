@@ -28,7 +28,7 @@ export class LanimalComponent implements OnInit {
 
   public model1: Animal = {
     id_animal: 0, nombre: '', n_microchip: '', dueno_id_dueno_id: 0,
-    color_id_color_id: 0, especie_id_especie_id: 0, estado_id_estado_id: 0, sexo_id_sexo_id: 0
+    color_id_color_id: 0, especie_id_especie_id: 0, estado_id_estado_id: 0, sexo_id_sexo_id: 0, tipo_sangre:''
   }
 
   public model2: ConsultaReserva = {

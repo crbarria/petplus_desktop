@@ -20,3 +20,12 @@
 .backgr{
     background-image: url("assets/image/back.jpg");
 }
+
+
+.negritas{
+    font-weight: bold;
+}
+
+.relleno{
+    background-color: white;
+}

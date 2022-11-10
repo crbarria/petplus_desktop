@@ -30,13 +30,23 @@
         <br>
 
         <form >
-        
-            Prueba
-         
 
+        <!-- Input de la hora seleccionada-->
+            <input class="form-control "  class="col-3" placeholder="Seleccione la hora que desea editar" type="text" id="nombre"
+            value={{hora}} name="nombre" style="margin-right: 50px; background-color: white;" disabled/>
 
+        <!--Option con el tipo de horas-->
+        <select class="options" name="id_estado_hora" 
+        >
+        <option>Seleccione un estado de hora</option>
+        <option value={{tipos.id_estado_hora}} *ngFor="let tipos of listtipo">
 
-        </form>
+          {{tipos.estado}}
+        </option>
+      </select>
+
+        <button class="boton_guardar">Modificar</button>
+    </form>
 
         <br>
         <br>   
@@ -56,18 +66,22 @@
                     <tr *ngFor="let horas of horaslist">
         
         
-                        <td>{{horas.id_reserva_horas}}</td>
+                        <td class="negritas">{{horas.id_reserva_horas}}</td>
         
-                        <td>{{horas.horas}}</td>
+                        <td class="negritas">{{horas.horas}}</td>
 
-                        <td >{{horas.estado_hora_id_estado_hora_id}}</td>
+                        <td class="negritas">{{horas.estado_hora_id_estado_hora_id}}</td>
         
                         <br>
+                        <button (click)="unahora(horas)" class="boton_editar"> Editar </button>
                      
         
                 </tbody>
             </table>
         </section>
+
+
+        
     </div>
 
 
