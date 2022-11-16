@@ -32,13 +32,13 @@ export class LanimalComponent implements OnInit {
   }
 
   public model2: ConsultaReserva = {
-    id_consulta_reserva: 0, fecha: '', motivo_consulta: '', peso: 0,
+    id_consulta_reserva: 0, fecha: '', 
     reserva_horas_id_reserva_horas_id: 0, animal_id_animal_id: 0
   }
 
   public model3: ConsuProcedimiento = {
     id_consulta_procedimiento: 0, observaciones: '', emp_id_emp_id: 0, procedimiento_id_procedimiento_id: 0,
-    consulta_reserva_id_consulta_reserva_id: 0
+    consulta_reserva_id_consulta_reserva_id: 0, motivo_consulta:'', peso:0,fecha_pro:''
   }
 
   //------------------------------------------------------------------------------------
@@ -233,6 +233,8 @@ export class LanimalComponent implements OnInit {
     })
   }
 
+
+ //Boton que guarda el procedimiento
 
   onSubmit4() {
     console.log(this.model3)

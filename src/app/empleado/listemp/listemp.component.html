@@ -36,15 +36,15 @@
 
 
 
-                <select style="margin-right: 30px;" class="options" name="tipo_empleado_id_tipo_empleado_id"
-                    [(ngModel)]="model.tipo_empleado_id_tipo_empleado_id" (change)="cambiartipoemp($event)">
+
+
+                <select style="margin-right: 30px;" class="options" name="tipo_emp"
+                    [(ngModel)]="model.tipo_emp">
                     <option> Seleccione el cargo</option>
-                    <option value={{tipo.id_tipo_emp}} *ngFor="let tipo of listtipoemp">
-                        {{tipo.nombre_tipo_emp}}
+                    <option value={{tipo}} *ngFor="let tipo of tipo_empleado">
+                        {{tipo}}
                     </option>
                 </select>
-
-
 
                 <button class="boton_guardar" >Añadir Empleado</button>
 
@@ -65,8 +65,8 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Numero empleado</th>
                     <th scope="col">Nombre empleado</th>
+                    <th scope="col">Tipo de trabajador</th>
                     <th scope="col">Eliminar</th>
 
 
@@ -76,9 +76,10 @@
                 <tr *ngFor="let emps of emplist">
 
 
-                    <td class="negritas">{{emps.id_emp}}</td>
 
                     <td class="negritas">{{emps.nombre_empleado}}</td>
+
+                    <td class="negritas">{{emps.tipo_emp}}</td>
 
                     <br>
                     <button (click)="eliminaremp(emps)" class="btn boton-eliminar" type="button">Eliminar</button>

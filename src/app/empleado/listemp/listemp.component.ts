@@ -17,13 +17,16 @@ export class ListempComponent implements OnInit {
 
   //Opciones y modelo de emplado
 
-  public model : Empleado={id_emp:0,nombre_empleado:'',veterinaria_id_veterinaria_id:1,tipo_empleado_id_tipo_empleado_id:0}
+  public model : Empleado={id_emp:0,nombre_empleado:'',veterinaria_id_veterinaria_id:1,tipo_empleado_id_tipo_empleado_id:1, tipo_emp:''}
 
   public cambiartipoemp(tipo: any) {
     console.log(parseFloat(tipo.target.value))
   }
 
   ///////////////////////////
+
+
+  public tipo_empleado: Array<any>=['Veterinario(a)','Técnico(a) Veterinario(a)','Secretario(a)','Recepcionista']
 
 
   constructor(private empservice: EmpleadoService) { }

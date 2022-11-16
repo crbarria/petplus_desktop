@@ -9,7 +9,8 @@ export class Animal {
         public color_id_color_id: number,
         public especie_id_especie_id: number,
         public estado_id_estado_id: number,
-        public sexo_id_sexo_id: number
+        public sexo_id_sexo_id: number,
+        public tipo_sangre: string
 
     ){}
 

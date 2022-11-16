@@ -12,7 +12,7 @@ export class ListhorasComponent implements OnInit {
 
   //Variables
 
-  public horaslist : Array<any>=[]
+ 
 
   public listtipo : Array<any>=[]
 
@@ -24,22 +24,41 @@ export class ListhorasComponent implements OnInit {
   ngOnInit(): void {
     this.Listahoras()
     this.Listtipo()
+
   }
+
+
+
+
+  public horaslist : Array<any>=[]
+
+
 
   Listahoras(){
     this.servicehoras.gethoras().subscribe((nuno : any)=>{
       this.horaslist = nuno.reserva_horas
+
+      console.log(nuno)
+
+
     })
   }
+
+
+
+  public estado_horas: Array<any>=['Disponible','Cancelada','No disponible']
+
 
   Listtipo(){
     this.servicehoras.gettipohoras().subscribe((nuno2 :any)=>{
       console.log(nuno2.estados)
-      this.listtipo = nuno2.estados
+      
     })
   }
 
   public hora:string=''
+
+  public estado:string=''
   
 
 
@@ -50,6 +69,12 @@ export class ListhorasComponent implements OnInit {
     this.hora = reserva_horas.horas
 
     console.log(this.hora)
+  }
+
+
+  modificarhora(reserva_horas :  ReservaHoras){
+    this.servicehoras.modificarhora(reserva_horas).subscribe();
+    console.log("Update completo")
   }
 
 }

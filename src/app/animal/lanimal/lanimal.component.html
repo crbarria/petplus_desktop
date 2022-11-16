@@ -129,17 +129,10 @@
         <h1 class="destacado">Datos de la consulta</h1>
 
         <label for="fecha"> </label>
-        <input placeholder="Ingrese la fecha de atención" class="form-control" class="col-3" type="text" id="fecha"
+        <input placeholder="Ingrese la fecha del dia de hoy" class="form-control" class="col-3" type="text" id="fecha"
           required [(ngModel)]="model2.fecha" name="fecha" #name="ngModel" style="margin-right: 50px;" />
 
-        <label for="motivo_consulta"> </label>
-        <input placeholder="Ingrese el motivo de la consulta" class="form-control" class="col-3" type="text"
-          id="motivo_consulta" required [(ngModel)]="model2.motivo_consulta" name="motivo_consulta" #name="ngModel"
-          style="margin-right: 30px;" />
-
-        <label for="peso"> </label>
-        <input placeholder="Ingrese el peso del animal" class="form-control" class="col-1" type="text" id="peso"
-          required [(ngModel)]="model2.peso" name="peso" #name="ngModel" /> KG
+      
 
         <br>
         <br>
@@ -176,10 +169,11 @@
 
       <label for="observaciones"> </label>
       <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text"
-        id="observaciones" required [(ngModel)]="model3.observaciones" name="observaciones" #name="ngModel" style="margin-right: 50px;"/>
+        id="observaciones" required [(ngModel)]="model3.observaciones" name="observaciones" #name="ngModel" class="grande" style="margin-right: 50px;"/>
 
+      
 
-      <select style="margin-right: 30px;" class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id" (change)="cambiaremp($event)">
+      <select style="margin-right: 30px;"  class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id" (change)="cambiaremp($event)">
         <option>Seleccione el trabajador</option>
         <option value={{emps.id_emp}} *ngFor="let emps of emplist">
 
@@ -204,6 +198,27 @@
           {{consu.animal_id_animal_id}}
         </option>
       </select>
+
+
+      <br>
+      <br>
+
+      <label for="fecha_pro"> </label>
+      <input placeholder="Ingrese la fecha de atención" class="form-control" class="col-3" type="text"
+        id="fecha_pro" required [(ngModel)]="model3.fecha_pro" name="fecha_pro" #name="ngModel"
+        style="margin-right: 30px;" />
+
+
+      <label for="motivo_consulta"> </label>
+      <input placeholder="Ingrese el motivo de la consulta" class="form-control" class="col-3" type="text"
+        id="motivo_consulta" required [(ngModel)]="model3.motivo_consulta" name="motivo_consulta" #name="ngModel"
+        style="margin-right: 30px;" />
+
+      
+
+      <label for="peso"> </label>
+      <input placeholder="Ingrese el peso del animal" class="form-control" class="col-1" type="text" id="peso"
+        required [(ngModel)]="model3.peso" name="peso" #name="ngModel" /> KG
       
       <br>
       <br>

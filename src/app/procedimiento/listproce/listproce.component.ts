@@ -35,13 +35,29 @@ export class ListproceComponent implements OnInit {
 
     this.proceservice.crearprocedimiento(this.model).subscribe((resultado:Procedimiento)=>{
       console.log(resultado)
+      
+      this.confiragregar()
 
     })
 
   }
 
+  confiragregar(){
+    alert("¡Procedimiento agregado!");
+    location.reload()
+  }
+
+
   eliminarproce(procedimiento : Procedimiento){
     this.proceservice.deleteprocedimiento(procedimiento.id_procedimiento).subscribe();
+
+    this.confirmarelminar()
+
   }
+
+ confirmarelminar(){
+  alert("¡Procedimiento eliminado!");
+  location.reload()
+ }
 
 }

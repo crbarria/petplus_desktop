@@ -18,108 +18,177 @@
 
 <!-- Page Content -->
 
+<div class="w3-container">
 
-<div style="margin-left:15%">
+  <div style="margin-left:15%">
 
-  <br>
+    <br>
 
-  <h1 class="destacado">Ingrese la ficha del animal</h1>
-  <input [(ngModel)]="buscar_input2" type="text" name="" id="">
-  <button (click)="buscar()" class="btn btn-primary boton_guardar" type="submit">Buscar</button>
-
-
-  <br>
-  <!--Se guarda el dueño -->
-  <h1 class="destacado">Datos del dueño</h1>
-  <div>
-    <form>
+    <h1 class="destacado">Ingrese la ficha del animal</h1>
+    <input [(ngModel)]="buscar_input2" type="text" name="" id="">
+    <button style="margin-left: 30px;" (click)="buscar()" class="btn btn-primary boton_guardar"
+      type="submit">Buscar</button>
 
 
-      <div class="">
-
-        <label for="nombre_completo"> </label>
-
-        <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text" id="nombre_completo"
-          name="nombre_completo" style="margin-right: 50px;" value={{nombre_dueno}} />
-
-        <label for="telefono"> </label>
-        <input placeholder="Ingrese número de telefono" class="form-control" class="col-3" type="text" id="telefono"
-          name="telefono" value={{duenotelefono}} />
-
-      </div>
-      <label for="correo"> </label>
-      <input placeholder="Ingrese el correo electronico" class="form-control" class="col-3" type="text" id="correo"
-        name="correo" style="margin-top: 30px;" value={{duenocorreo}} />
-      <br>
-      <br>
-      <button class="btn btn-primary boton_guardar" type="submit">Modificar</button>
-
-    </form>
-
-    <!--Se modifica un animal-->
-
-    <h1 class="destacado">Datos del animal</h1>
-
-    <form>
-
-      <label for="nombre"> </label>
-      <input class="form-control" class="col-3" placeholder="Ingrese el nombre del animal" type="text" id="nombre"
-        value={{nombreanimal}} name="nombre" style="margin-right: 50px;" />
-
-      <label for="n_microchip"> </label>
-      <input class="form-control" class="col-3" placeholder="Ingrese el numero de microchip" type="text"
-        value={{n_microchip}} id="n_microchip" name="n_microchip" style="margin-right: 30px;" />
+    <br>
+    <!--Se guarda el dueño -->
+    <h1 class="destacado">Datos del dueño</h1>
+    <div>
+      <form>
 
 
-      <select style="margin-right: 30px;" class="options" name="dueno_id_dueno_id">
-        <option> Seleccione el dueño</option>
-        <option value={{duenos.id_dueno}} *ngFor="let duenos of duenolist">
-          {{duenos.nombre_completo}}
-        </option>
-      </select>
+        <div class="">
 
+          <label for="nombre_completo"> </label>
 
-      <select class="options" name="color_id_color_id" (change)="cambiarcolor($event)">
-        <option>Seleccione un color</option>
-        <option value={{colores.id_color}} *ngFor="let colores of coloreslist">
+          <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text"
+            id="nombre_completo" name="nombre_completo" style="margin-right: 50px;" value={{nombre_dueno}} />
 
-          {{colores.color}}
-        </option>
-      </select>
+          <label for="telefono"> </label>
+          <input placeholder="Ingrese número de telefono" class="form-control" class="col-3" type="text" id="telefono"
+            name="telefono" value={{duenotelefono}} />
 
+        </div>
+        <label for="correo"> </label>
+        <input placeholder="Ingrese el correo electronico" class="form-control" class="col-3" type="text" id="correo"
+          name="correo" style="margin-top: 30px;" value={{duenocorreo}} />
+        <br>
+        <br>
+        <button class="btn btn-primary boton_guardar" type="submit">Modificar</button>
+
+      </form>
+
+      <!--Se modifica un animal-->
       <br>
       <br>
 
-      <select style="margin-right: 30px;" class="options" name="especie_id_especie_id">
-        <option>Seleccione la especie </option>
-        <option value={{especies.id_especie}} *ngFor="let especies of especielist">
+      <h1 class="destacado">Datos del animal</h1>
 
-          {{especies.nombre_especie}}
-        </option>
-      </select>
+      <form (ngSubmit)="onSubmit()">
+
+        <label for="nombre"> </label>
+        <input class="form-control" class="col-3" placeholder="Ingrese el nombre del animal" type="text" id="nombre"
+          required [(ngModel)]="model1.nombre" name="nombre" #name="ngModel" style="margin-right: 50px;" value="{{nombreanimal}}" />
+
+        <label for="n_microchip"> </label>
+        <input class="form-control" class="col-3" placeholder="Ingrese el numero de microchip" type="text"
+          id="n_microchip" required [(ngModel)]="model1.n_microchip" name="n_microchip" style="margin-right: 30px;" />
 
 
-      <select style="margin-right: 30px;" class="options" name="estado_id_estado_id">
-        <option>Seleccione un estado</option>
-        <option value={{estados.id_estado}} *ngFor="let estados of estadolist">
+        <select style="margin-right: 30px;" class="options" name="dueno_id_dueno_id"
+          [(ngModel)]="model1.dueno_id_dueno_id" (change)="cambiardueno($event)">
+          <option> Seleccione el dueño</option>
+          <option value={{duenos.id_dueno}} *ngFor="let duenos of duenolist">
+            {{duenos.nombre_completo}}
+          </option>
+        </select>
 
-          {{estados.estado}}
-        </option>
-      </select>
 
-      <select class="options" name="sexo_id_sexo_id">
-        <option>Seleccione el genero</option>
-        <option value={{sexos.id_sexo}} *ngFor="let sexos of sexolist">
+        <select class="options" name="color_id_color_id" [(ngModel)]="model1.color_id_color_id"
+          (change)="cambiarcolor($event)">
+          <option>Seleccione un color</option>
+          <option value={{colores.id_color}} *ngFor="let colores of coloreslist">
 
-          {{sexos.sexo}}
-        </option>
-      </select>
+            {{colores.color}}
+          </option>
+        </select>
+
+        <br>
+        <br>
+
+        <select style="margin-right: 30px;" class="options" name="especie_id_especie_id"
+          [(ngModel)]="model1.especie_id_especie_id" (change)="cambiarespecie($event)">
+          <option>Seleccione la especie </option>
+          <option value={{especies.id_especie}} *ngFor="let especies of especielist">
+
+            {{especies.nombre_especie}}
+          </option>
+        </select>
+
+
+        <select style="margin-right: 30px;" class="options" name="estado_id_estado_id"
+          [(ngModel)]="model1.estado_id_estado_id" (change)="cambiarestado($event)">
+          <option>Seleccione un estado</option>
+          <option value={{estados.id_estado}} *ngFor="let estados of estadolist">
+
+            {{estados.estado}}
+          </option>
+        </select>
+
+        <select class="options" name="sexo_id_sexo_id" [(ngModel)]="model1.sexo_id_sexo_id"
+          (change)="cambiarsexo($event)">
+          <option>Seleccione el genero</option>
+          <option value={{sexos.id_sexo}} *ngFor="let sexos of sexolist">
+
+            {{sexos.sexo}}
+          </option>
+        </select>
+
+        <label for="tipo_sangre"> </label>
+        <input class="form-control" class="col-3" placeholder="Ingrese el tipo de sangre del animal" type="text"
+          id="tipo_sangre" required [(ngModel)]="model1.tipo_sangre" name="tipo_sangre" style="margin-left: 30px;" />
+
+
+        <br>
+        <br>
+        <button (click)="modificar()" class="btn btn-primary boton_guardar" type="submit">Modificar</button>
+      </form>
+
 
       <br>
       <br>
-      <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
-    </form>
 
+
+      <h1 class="destacado">Procedimiento</h1>
+
+      <form (ngSubmit)="onSubmit4()">
+
+        <label for="observaciones"> </label>
+        <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text" id="observaciones"
+          required [(ngModel)]="model3.observaciones" name="observaciones" #name="ngModel" class="grande"
+          style="margin-right: 50px;" />
+
+
+
+        <select style="margin-right: 30px;" class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id"
+          (change)="cambiaremp($event)">
+          <option>Seleccione el trabajador</option>
+          <option value={{emps.id_emp}} *ngFor="let emps of emplist">
+
+            {{emps.nombre_empleado}}
+          </option>
+        </select>
+
+        <select style="margin-right: 30px;" class="options" name="procedimiento_id_procedimiento_id"
+          [(ngModel)]="model3.procedimiento_id_procedimiento_id" (change)="cambiarproce($event)">
+          <option>Seleccione un procedimiento</option>
+          <option value={{proces.id_procedimiento}} *ngFor="let proces of procelist">
+
+            {{proces.nombre_procedimiento}}
+          </option>
+        </select>
+
+        <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
+          [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
+          <option>Seleccione su ficha</option>
+          <option value={{consu.id_consulta_reserva}} *ngFor="let consu of consullist">
+
+            {{consu.animal_id_animal_id}}
+          </option>
+        </select>
+
+        <br>
+        <br>
+
+        <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
+
+      </form>
+
+
+
+
+
+    </div>
 
 
   </div>

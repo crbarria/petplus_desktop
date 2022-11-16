@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BuscarService } from '../buscarservice/buscar.service';
+import { Animal } from '../models/animal';
+import { ConsuProcedimiento } from '../models/consu-procedimiento';
 
 @Component({
   selector: 'app-buscaranimal',
@@ -22,10 +24,15 @@ export class BuscaranimalComponent implements OnInit {
 
   public animallist: any;
 
-  public emplist: any;
 
 
 
+//Modelo de la creación de consulta procedimiento
+
+public model3: ConsuProcedimiento = {
+  id_consulta_procedimiento: 0, observaciones: '', emp_id_emp_id: 0, procedimiento_id_procedimiento_id: 0,
+  consulta_reserva_id_consulta_reserva_id: 0
+}
 
 
 
@@ -57,6 +64,21 @@ export class BuscaranimalComponent implements OnInit {
     this.color_id_color_id=2
 
     console.log(this.color_id_color_id)
+
+      //Cargamos los datos de procedimiento
+
+    this.buscarservice.getemp().subscribe((nuno8: any) => {
+      this.emplist = nuno8.emps
+    })
+
+    this.buscarservice.getprocedimiento().subscribe((nuno9: any) => {
+      this.procelist = nuno9.procedimientos
+    })
+
+    this.buscarservice.getconreserva().subscribe((nuno10: any) => {
+      this.consullist = nuno10.consulta_reserva
+
+    })
 
 
   }
@@ -100,6 +122,34 @@ cambiarcolor(e: any) {
 public especienombre:number=0
 public estadonombre:number=0
 public generonombre:number=0
+
+
+
+//Obtenemos los id en valor numerico para rellenar la creación de animal
+
+
+cambiardueno(d: any) {
+  console.log(parseFloat(d.target.value))
+
+}
+
+
+cambiarespecie(es: any) {
+  console.log(parseFloat(es.target.value))
+}
+
+
+cambiarestado(esta: any) {
+  console.log(parseFloat(esta.target.value))
+}
+
+
+
+cambiarsexo(sex: any) {
+  console.log(parseFloat(sex.target.value))
+}
+
+
 
 
 
@@ -152,6 +202,61 @@ public buscardu(){
 
 
 
+
+//Variables de consulta procedimineto
+
+
+public emplist: any;
+
+cambiaremp(empleados: any) {
+  console.log(parseFloat(empleados.target.value))
+}
+
+public procelist: any;
+
+public cambiarproce(proce: any) {
+  console.log(parseFloat(proce.target.value))
+}
+
+public consullist: any;
+
+public cambiarconsulta(consu: any) {
+  console.log(parseFloat(consu.target.value))
+}
+
+
+
+//Confirmacion del modelo
+
+
+onSubmit4() {
+  console.log(this.model3)
+
+  this.buscarservice.crearconsultaproce(this.model3).subscribe((resultado: ConsuProcedimiento) => {
+    console.log(resultado)
+  })
+
+}
+
+
+//Modelo para actualizar
+
+public model1: Animal = {
+  id_animal: 0, nombre: '', n_microchip: '', dueno_id_dueno_id: 0,
+  color_id_color_id: 0, especie_id_especie_id: 0, estado_id_estado_id: 0, sexo_id_sexo_id: 0, tipo_sangre:''
+}
+
+modificar(){
+
+  console.log(this.model1)
+
+  this.buscarservice.modificaranimal(this.model1)
+ 
+}
+
+onSubmit(){
+  console.log(this.model1)
+}
 
 
 }
