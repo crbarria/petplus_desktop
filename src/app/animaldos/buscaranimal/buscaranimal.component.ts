@@ -31,7 +31,7 @@ export class BuscaranimalComponent implements OnInit {
 
 public model3: ConsuProcedimiento = {
   id_consulta_procedimiento: 0, observaciones: '', emp_id_emp_id: 0, procedimiento_id_procedimiento_id: 0,
-  consulta_reserva_id_consulta_reserva_id: 0
+  consulta_reserva_id_consulta_reserva_id: 0, motivo_consulta: '', peso:0, fecha_pro:''
 }
 
 

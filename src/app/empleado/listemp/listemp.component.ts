@@ -60,7 +60,16 @@ export class ListempComponent implements OnInit {
 
   eliminaremp(empleado : Empleado){
     this.empservice.deleteemp(empleado.id_emp).subscribe();
+
+    this.confirmarelminar()
+
   }
+
+
+  confirmarelminar(){
+    alert("Empleado eliminado!");
+    location.reload()
+   }
 
   
 
@@ -72,8 +81,15 @@ export class ListempComponent implements OnInit {
     this.empservice.crearemp(this.model).subscribe((resultado:Empleado)=>{
       console.log(resultado)
 
+      this.confiragregar()
+
     })
 
+  }
+
+  confiragregar(){
+    alert("¡Empleado agregado!");
+    location.reload()
   }
 
 }

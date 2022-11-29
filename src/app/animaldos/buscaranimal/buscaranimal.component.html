@@ -25,6 +25,7 @@
     <br>
 
     <h1 class="destacado">Ingrese la ficha del animal</h1>
+    <br>
     <input [(ngModel)]="buscar_input2" type="text" name="" id="">
     <button style="margin-left: 30px;" (click)="buscar()" class="btn btn-primary boton_guardar"
       type="submit">Buscar</button>
@@ -33,6 +34,7 @@
     <br>
     <!--Se guarda el dueño -->
     <h1 class="destacado">Datos del dueño</h1>
+    <br>
     <div>
       <form>
 
@@ -63,7 +65,7 @@
       <br>
 
       <h1 class="destacado">Datos del animal</h1>
-
+      <br>
       <form (ngSubmit)="onSubmit()">
 
         <label for="nombre"> </label>
@@ -139,49 +141,78 @@
       <br>
 
 
-      <h1 class="destacado">Procedimiento</h1>
+      <h1 class="destacado">Consulta y procedimiento</h1>
+      <br>
 
       <form (ngSubmit)="onSubmit4()">
 
+        <label for="fecha_pro"> </label>
+        <input placeholder="Ingrese la fecha de atención" class="form-control" class="col-3" type="text"
+          id="fecha_pro" required [(ngModel)]="model3.fecha_pro" name="fecha_pro" #name="ngModel"
+          style="margin-right: 30px;" />
+  
+  
+        <label for="motivo_consulta"> </label>
+        <input placeholder="Ingrese el motivo de la consulta" class="form-control" class="col-3" type="text"
+          id="motivo_consulta" required [(ngModel)]="model3.motivo_consulta" name="motivo_consulta" #name="ngModel"
+          style="margin-right: 30px;" />
+  
+        
+  
+        <label for="peso"> </label>
+        <input placeholder="Ingrese el peso del animal" class="form-control" class="col-1" type="text" id="peso"
+          required [(ngModel)]="model3.peso" name="peso" #name="ngModel" /> KG
+
+          <br>
+          <br>
+          <br>
+
         <label for="observaciones"> </label>
-        <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text" id="observaciones"
-          required [(ngModel)]="model3.observaciones" name="observaciones" #name="ngModel" class="grande"
-          style="margin-right: 50px;" />
-
-
-
-        <select style="margin-right: 30px;" class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id"
-          (change)="cambiaremp($event)">
+        <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text"
+          id="observaciones" required [(ngModel)]="model3.observaciones" name="observaciones" #name="ngModel" class="grande"
+           style="margin-right: 50px;" class="inputgrande"/>
+  
+        
+  
+        <select style="margin-right: 30px;"  class="options" name="emp_id_emp_id" [(ngModel)]="model3.emp_id_emp_id" (change)="cambiaremp($event)">
           <option>Seleccione el trabajador</option>
           <option value={{emps.id_emp}} *ngFor="let emps of emplist">
-
+  
             {{emps.nombre_empleado}}
           </option>
         </select>
-
-        <select style="margin-right: 30px;" class="options" name="procedimiento_id_procedimiento_id"
-          [(ngModel)]="model3.procedimiento_id_procedimiento_id" (change)="cambiarproce($event)">
+  
+        <select style="margin-right: 30px;" class="options" name="procedimiento_id_procedimiento_id" [(ngModel)]="model3.procedimiento_id_procedimiento_id"
+          (change)="cambiarproce($event)">
           <option>Seleccione un procedimiento</option>
           <option value={{proces.id_procedimiento}} *ngFor="let proces of procelist">
-
+  
             {{proces.nombre_procedimiento}}
           </option>
         </select>
-
+  
         <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
           [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
           <option>Seleccione su ficha</option>
           <option value={{consu.id_consulta_reserva}} *ngFor="let consu of consullist">
-
+  
             {{consu.animal_id_animal_id}}
           </option>
         </select>
-
+  
+  
         <br>
         <br>
-
+  
+       
+      
+  
         <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
 
+        <br>
+        <br>
+        <br>
+  
       </form>
 
 

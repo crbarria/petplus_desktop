@@ -207,19 +207,31 @@ export class LanimalComponent implements OnInit {
     //console.log(this.model)
     this.serviceanimal.creardueno(this.model).subscribe((resultado: Dueno) => {
       console.log(resultado)
+      this.confiragregarDu()
+
     })
+  }
+
+  confiragregarDu(){
+    alert("¡Dueño agregado!");
+    location.reload()
   }
 
 
   //Boton que guarda el animal
 
   onSubmit2() {
-    console.log(this.model1)
-
     this.serviceanimal.creaanimal(this.model1).subscribe((resultado: Animal) => {
       console.log(resultado)
     })
+  this.confiragregarAni()
+  }
 
+
+
+  confiragregarAni(){
+    alert("¡Animal agregado!");
+    location.reload()
   }
 
 
@@ -230,7 +242,14 @@ export class LanimalComponent implements OnInit {
 
     this.serviceanimal.crearconsultare(this.model2).subscribe((resultado: ConsultaReserva) => {
       console.log(resultado)
+      this.confiragregarConsu()
     })
+    this.confiragregarConsu()
+  }
+
+  confiragregarConsu(){
+    alert("¡Ficha creada correctamente!");
+    location.reload()
   }
 
 

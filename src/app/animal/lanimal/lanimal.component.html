@@ -44,7 +44,7 @@
           required [(ngModel)]="model.correo" name="correo" style="margin-top: 30px;" />
         <br>
         <br>
-        <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
+        <button class="btn btn-primary boton_guardar"  type="submit">Guardar</button>
 
 
       </form>
@@ -126,7 +126,7 @@
 
       <form (ngSubmit)="onSubmit3()">
 
-        <h1 class="destacado">Datos de la consulta</h1>
+        <h1 class="destacado">Datos de la creación de la ficha</h1>
 
         <label for="fecha"> </label>
         <input placeholder="Ingrese la fecha del dia de hoy" class="form-control" class="col-3" type="text" id="fecha"
@@ -163,6 +163,7 @@
 
     </div>
 
+   <!-- 
     <h1 class="destacado">Procedimiento</h1>
 
     <form (ngSubmit)="onSubmit4()">
@@ -226,7 +227,22 @@
       <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
 
     </form>
+    --> 
 
+    <br>
+    <br>
+    <h1 class="destacado">Fichas creadas</h1>
+    <br>
+    <br>
+
+    <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
+    [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
+    <option>Seleccione su ficha</option>
+    <option value={{consu.id_consulta_reserva}} *ngFor="let consu of consullist">
+
+      {{consu.animal_id_animal_id}}
+    </option>
+  </select>
   </div>
 
 </div>
