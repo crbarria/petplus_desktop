@@ -9,7 +9,15 @@ import { Procedimiento } from '../models/procedimiento';
 export class ProcedimientoService {
 
 
-  URLprocedimiento: string = "http://127.0.0.1:8000/app_procedimiento/procedimiento/";
+  //LOCAL
+
+//  URLprocedimiento: string = "http://127.0.0.1:8000/app_procedimiento/procedimiento/";
+
+
+  //NUBE
+
+  URLprocedimiento:string="http://api-petplus-duocuc.herokuapp.com/app_procedimiento/procedimiento/";
+
 
 
 

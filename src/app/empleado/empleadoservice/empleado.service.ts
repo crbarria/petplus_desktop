@@ -8,8 +8,17 @@ import { Empleado } from '../models/empleado';
 })
 export class EmpleadoService {
 
+//LOCAL
+
+/*
 URLempleado:string = "http://127.0.0.1:8000/app_emp/emp/"
 URLtipoemp:string = "http://127.0.0.1:8000/app_tipo_empleado/tipo_emp/"
+*/
+
+//NUBE
+
+URLempleado:string = "http://api-petplus-duocuc.herokuapp.com/app_emp/emp/"
+URLtipoemp:string = "http://api-petplus-duocuc.herokuapp.com/app_tipo_emp/tipo_emp/"
 
   constructor(private http: HttpClient) { }
 

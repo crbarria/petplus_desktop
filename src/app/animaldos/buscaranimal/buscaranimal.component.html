@@ -74,7 +74,7 @@
 
         <label for="n_microchip"> </label>
         <input class="form-control" class="col-3" placeholder="Ingrese el numero de microchip" type="text"
-          id="n_microchip" required [(ngModel)]="model1.n_microchip" name="n_microchip" style="margin-right: 30px;" />
+          id="n_microchip" required [(ngModel)]="model1.n_microchip" name="n_microchip" style="margin-right: 30px;" value="{{n_microchip}}" />
 
 
         <select style="margin-right: 30px;" class="options" name="dueno_id_dueno_id"
@@ -128,7 +128,7 @@
 
         <label for="tipo_sangre"> </label>
         <input class="form-control" class="col-3" placeholder="Ingrese el tipo de sangre del animal" type="text"
-          id="tipo_sangre" required [(ngModel)]="model1.tipo_sangre" name="tipo_sangre" style="margin-left: 30px;" />
+          id="tipo_sangre" required [(ngModel)]="model1.tipo_sangre" name="tipo_sangre" style="margin-left: 30px;" value="{{ntipo_sangre}}"/>
 
 
         <br>
@@ -216,10 +216,26 @@
       </form>
 
 
+      <h1 class="destacado">Segunda clave</h1>
+      <br>
+     
 
-
+          <select style="margin-right: 30px;" class="options" name="consulta_reserva_id_consulta_reserva_id"
+          [(ngModel)]="model3.consulta_reserva_id_consulta_reserva_id" (change)="cambiarconsulta($event)">
+          <option>Seleccione su ficha</option>
+          <option value={{consu.id_consulta_procedimiento}} *ngFor="let consu of segundalist">
+  
+            {{consu.id_consulta_procedimiento}}
+          </option>
+        </select>
 
     </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
 
 
   </div>

@@ -80,6 +80,10 @@ public model3: ConsuProcedimiento = {
 
     })
 
+    this.buscarservice.getconsuproce().subscribe((nuno11:any)=>{
+      this.segundalist = nuno11.consulta_procedimientos
+    })
+
 
   }
 
@@ -93,6 +97,8 @@ public buscar_input2: string=""
 public nombredueno:string=""
 public correodueno:string=""
 public telefonodueno:string=""
+public ntipo_sangre:string=""
+
 
 
 //BUSCADOR DE ANIMAL
@@ -153,7 +159,6 @@ cambiarsexo(sex: any) {
 
 
 
-
 //FIN DEL TEST
 
 public buscardueno(){
@@ -167,6 +172,10 @@ public buscardueno(){
   })
 }
 
+
+
+
+
 public buscar(){
   this.buscarservice.getunanimal(this.buscar_input2).subscribe((nuno2:any)=>{
     console.log(nuno2)
@@ -178,6 +187,9 @@ public buscar(){
     this.especienombre = nuno2.animales.especie_id_especie_id
     this.estadonombre = nuno2.animales.estado_id_estado_id
     this.generonombre = nuno2.animales.sexo_id_sexo_id
+    this.ntipo_sangre = nuno2.animales.tipo_sangre
+
+    console.log(this.ntipo_sangre)
 
 
     //Asignamos el id de dueno
@@ -224,6 +236,8 @@ public cambiarconsulta(consu: any) {
   console.log(parseFloat(consu.target.value))
 }
 
+
+public segundalist:any;
 
 
 //Confirmacion del modelo

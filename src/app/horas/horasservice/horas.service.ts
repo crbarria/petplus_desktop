@@ -9,10 +9,23 @@ import { TipóHoras } from '../models/tipó-horas';
 })
 export class HorasService {
 
+  //LOCAL
+
+  /*
   URLreservahoras: string = "http://127.0.0.1:8000/app_reserva/reserva_horas/";
-  URLestadohoras: string = 'http://127.0.0.1:8000/app_estado_hora/estado_hora/';
+  URLestadohoras: string = "http://127.0.0.1:8000/app_estado_hora/estado_hora/";
+
+  */
 
   URLTEST: string = "http://127.0.0.1:8000/app_reserva/reserva_horas/100";
+
+  
+
+  //NUBE
+
+  URLreservahoras:string ="http://api-petplus-duocuc.herokuapp.com/app_reserva/reserva_horas/";
+  URLestadohoras:string= "http://api-petplus-duocuc.herokuapp.com/app_estado_hora/estado_hora/";
+
 
   
   constructor(private http: HttpClient) { }
