@@ -91,6 +91,7 @@ public model3: ConsuProcedimiento = {
 
 public buscar_input : string=""
 public buscar_input2: string=""
+public buscar_input3:string=""
 
 //BUSCADOR DUENO
 
@@ -159,7 +160,7 @@ cambiarsexo(sex: any) {
 
 
 
-//FIN DEL TEST
+//TESTEO
 
 public buscardueno(){
   this.buscarservice.getundueno(this.buscar_input).subscribe((nuno : any)=>{
@@ -173,7 +174,7 @@ public buscardueno(){
 }
 
 
-
+//FIN DEL TEST
 
 
 public buscar(){
@@ -189,13 +190,15 @@ public buscar(){
     this.generonombre = nuno2.animales.sexo_id_sexo_id
     this.ntipo_sangre = nuno2.animales.tipo_sangre
 
-    console.log(this.ntipo_sangre)
 
 
     //Asignamos el id de dueno
 
     this.iddueno = nuno2.animales.dueno_id_dueno_id
     this.numerodueno = this.iddueno
+
+    console.log(this.numerodueno)
+
 
     //Metodo de buscador de dueño
 
@@ -211,6 +214,57 @@ public buscardu(){
     this.duenocorreo= nuno5.dueno.correo
   })
 }
+
+
+//BUSCADOR DE LA FICHA DEL ANIMAL
+
+
+public fecha_pro:string=""
+public motivo_consulta:string=""
+public observacion:string=""
+public peso:number=0
+
+
+
+public buscadorficha(){
+ 
+  this.buscarservice.getunaficha(this.buscar_input3).subscribe((nuno6 : any)=>{
+    console.log(nuno6)
+    this.fecha_pro = nuno6.consulta_procedimiento.fecha_pro
+    this.motivo_consulta = nuno6.consulta_procedimiento.motivo_consulta
+    this.observacion = nuno6.consulta_procedimiento.observaciones
+    this.peso = nuno6.consulta_procedimiento.peso
+  })
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FIN DEL BUSCADOR FICHA ANIMAL
 
 
 

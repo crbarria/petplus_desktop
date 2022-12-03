@@ -32,21 +32,35 @@
                 <label for="nombre_empleado"> </label>
                 <input placeholder="Ingrese nombre completo" class="form-control" class="col-2" type="text"
                     id="nombre_empleado" required [(ngModel)]="model.nombre_empleado" name="nombre_empleado"
-                    #name="ngModel" style="margin-right: 50px;" />
+                    #nombre_empleado="ngModel" style="margin-right: 50px;" />
 
 
-
-
-
-                <select style="margin-right: 30px;" class="options" name="tipo_emp"
-                    [(ngModel)]="model.tipo_emp">
+                <select style="margin-right: 30px;" class="options" name="tipo_emp" [(ngModel)]="model.tipo_emp">
                     <option> Seleccione el cargo</option>
                     <option value={{tipo}} *ngFor="let tipo of tipo_empleado">
                         {{tipo}}
                     </option>
                 </select>
 
-                <button class="boton_guardar" >Añadir Empleado</button>
+                <div *ngIf="nombre_empleado.invalid">
+                    <br>
+                    <button disabled class="boton_apagado">Añadir Empleado</button>
+                </div>
+
+
+
+                <div *ngIf="nombre_empleado.valid">
+                    <br>
+                    <button class="boton_guardar">Añadir Empleado</button>
+                </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -90,7 +104,7 @@
 
         <!--Se agrega un nuevo procedimiento-->
         <br>
-        
+
 
     </div>
 

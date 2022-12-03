@@ -34,16 +34,27 @@
             <label for="nombre_procedimiento"> </label>
             <input placeholder="Ingrese nombre del procedimiento" class="form-control" class="col-2" type="text"
                 id="nombre_procedimiento" required [(ngModel)]="model.nombre_procedimiento" name="nombre_procedimiento"
-                #name="ngModel" style="margin-right: 50px;" />
+                #nombre_procedimiento="ngModel" style="margin-right: 50px;" />
 
-            <button class="boton_guardar" >Añadir procedimiento</button>
+
+                <div *ngIf="nombre_procedimiento.invalid">
+                    <br>
+                    <button class="boton_apagado" disabled>Añadir procedimiento</button>
+                </div>
+      
+
+
+            <div *ngIf="nombre_procedimiento.valid">
+                <br>
+                <button class="boton_guardar">Añadir procedimiento</button>
+            </div>
 
 
 
         </form>
 
         <br>
-        <br>   
+        <br>
         <section>
 
             <table class="table table-hover">
@@ -63,7 +74,7 @@
                         <td class="negritas">{{procedimientos.nombre_procedimiento}}</td>
 
                         <br>
-                        <button (click)="eliminarproce(procedimientos)"  class="btn boton-eliminar"
+                        <button (click)="eliminarproce(procedimientos)" class="btn boton-eliminar"
                             type="button">Eliminar</button>
 
             </table>

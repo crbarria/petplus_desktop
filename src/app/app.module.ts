@@ -19,6 +19,7 @@ import { LoginModule } from './login/login.module';
 import { InicioComponent } from './login/inicio/inicio.component';
 import { HorasModule } from './horas/horas.module';
 import { ListhorasComponent } from './horas/listhoras/listhoras.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ListhorasComponent } from './horas/listhoras/listhoras.component';
     ProcedimientoModule,
     EmpleadoModule,
     LoginModule,
-    HorasModule
+    HorasModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

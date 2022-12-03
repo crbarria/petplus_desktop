@@ -1,5 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { AnimalService } from '../animalservice/animal.service';
 import { Animal } from '../models/animal';
@@ -125,7 +126,7 @@ export class LanimalComponent implements OnInit {
 
   //-----------------------------------------------
 
-  constructor(private serviceanimal: AnimalService) { }
+  constructor(private serviceanimal: AnimalService, private formbuilder : FormBuilder ) { }
 
   ngOnInit(): void {
 
@@ -180,6 +181,11 @@ export class LanimalComponent implements OnInit {
 
     })
 
+
+    //Validaciones
+
+  
+
   }
 
   //--------------------------TESTEO---------------------------
@@ -202,14 +208,23 @@ export class LanimalComponent implements OnInit {
   //----------------------------FIN DEL TESTEO--------------------------------
 
 
+
+  
+
   //Boton que guarda el dueño
+  public validador:number=0
   onSubmit() {
     //console.log(this.model)
-    this.serviceanimal.creardueno(this.model).subscribe((resultado: Dueno) => {
-      console.log(resultado)
-      this.confiragregarDu()
 
-    })
+
+      this.serviceanimal.creardueno(this.model).subscribe((resultado: Dueno) => {
+        console.log(resultado)
+        this.confiragregarDu()
+      })
+
+    
+  
+   
   }
 
   confiragregarDu(){
@@ -262,6 +277,10 @@ export class LanimalComponent implements OnInit {
       console.log(resultado)
     })
 
+  }
+
+  relleneloscampos(){
+    console.log("truco")
   }
 
 

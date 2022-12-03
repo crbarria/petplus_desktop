@@ -28,6 +28,15 @@
     size: 10px;
 }
 
+.boton_apagado{
+
+    background-color:  #18246e;
+    color: white;
+    opacity: 50%;
+    border-radius: 5px;
+    size: 10px;
+}
+
 
 .options{
 
