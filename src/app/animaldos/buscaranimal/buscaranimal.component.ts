@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { BuscarService } from '../buscarservice/buscar.service';
 import { Animal } from '../models/animal';
 import { ConsuProcedimiento } from '../models/consu-procedimiento';
@@ -39,7 +40,17 @@ public model3: ConsuProcedimiento = {
   
   constructor(private buscarservice : BuscarService) { }
 
+
+  
+  dtoptions:DataTables.Settings={};
+  dtTrigger:Subject<any>=new Subject<any>();
+
   ngOnInit(): void {
+
+
+    this.dtoptions={
+      pagingType:'simple_numbers'
+    };
 
     this.buscarservice.getcolor().subscribe((nuno: any) => {
       this.coloreslist = nuno.colores;
@@ -82,8 +93,17 @@ public model3: ConsuProcedimiento = {
 
     this.buscarservice.getconsuproce().subscribe((nuno11:any)=>{
       this.segundalist = nuno11.consulta_procedimientos
+
+      console.log(this.segundalist)
+
+      this.dtTrigger.next(null);
+
+
     })
 
+
+
+    //Consulta procedimiento datos
 
   }
 

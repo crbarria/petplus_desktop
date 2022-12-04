@@ -20,6 +20,7 @@ import { InicioComponent } from './login/inicio/inicio.component';
 import { HorasModule } from './horas/horas.module';
 import { ListhorasComponent } from './horas/listhoras/listhoras.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     EmpleadoModule,
     LoginModule,
     HorasModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

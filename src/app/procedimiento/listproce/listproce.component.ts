@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Procedimiento } from '../models/procedimiento';
 import { ProcedimientoService } from '../serviceproce/procedimiento.service';
 
@@ -18,12 +19,24 @@ export class ListproceComponent implements OnInit {
 
   constructor(private proceservice: ProcedimientoService) { }
 
+
+  dtoptions:DataTables.Settings={};
+  dtTrigger:Subject<any>=new Subject<any>();
+
+
   ngOnInit(): void {
+
+    this.dtoptions={
+      pagingType:'simple_numbers'
+    };
+
 
     this.proceservice.getprocedimiento().subscribe((nuno:any)=>{
       console.log(nuno.procedimientos)
 
       this.procelist = nuno.procedimientos
+
+      this.dtTrigger.next(null);
 
     })
 

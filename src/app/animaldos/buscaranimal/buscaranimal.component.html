@@ -51,25 +51,52 @@
       <br>
       <br>
 
-    <h1 class="destacado">Informacion de ficha</h1>
-
-    <input [(ngModel)]="buscar_input3" type="text" name="" id="">
-    <button style="margin-left: 30px;" (click)="buscadorficha()" class="btn btn-primary boton_guardar"
-      type="submit">Buscar</button>
+   
     <br>
 
-    <label class="destacado">Fecha de revision: {{fecha_pro}}</label>
+    <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-dark" style="width:60%">
+      <thead>
+          <tr>
+              <th>
+                Segunda clave
+              </th>
+              <th>
+                Fecha de atención
+              </th>
+              <th>
+                Motivo de la consulta
+              </th>
+              <th>
+                Peso
+              </th>
+              <th>
+                Observacion
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let consuproce of segundalist">
+              <td>
+                {{consuproce.consulta_reserva_id_consulta_reserva_id}}
+              </td>
+              <td>
+                {{consuproce.fecha_pro}}
+              </td>
+              <td>
+                {{consuproce.motivo_consulta}}
+              </td>
+              <td>
+                {{consuproce.peso}}
+              </td>
+              <td>
+                {{consuproce.observaciones}}
+              </td>
+          </tr>
+      </tbody>
+  </table>
 
-    <br>
-    <label class="destacado">Motivo consulta: {{motivo_consulta}}</label>
-
-    <br>
-    <label class="destacado">Observacion: {{observacion}}</label>
-
-    <br>
-    <label class="destacado">Peso: {{peso}} KG</label>
-
-
+  <br>
+  <br>
 
 
       <h1 class="destacado">Consulta y procedimiento</h1>
@@ -156,7 +183,7 @@
           <option>Seleccione su ficha</option>
           <option value={{consu.id_consulta_procedimiento}} *ngFor="let consu of segundalist">
   
-            {{consu.id_consulta_procedimiento}}
+            {{consu.consulta_reserva_id_consulta_reserva_id}}
           </option>
         </select>
 
