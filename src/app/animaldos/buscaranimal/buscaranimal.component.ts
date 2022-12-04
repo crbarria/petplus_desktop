@@ -197,6 +197,15 @@ public buscardueno(){
 //FIN DEL TEST
 
 
+//Buscamos los parametros de especie
+
+public especieid:string=""
+public numeroespecie:string=""
+public nombre_especie:string=""
+
+
+//Finaliza la busqueda de especie 
+
 public buscar(){
   this.buscarservice.getunanimal(this.buscar_input2).subscribe((nuno2:any)=>{
     console.log(nuno2)
@@ -224,6 +233,17 @@ public buscar(){
 
     this.buscardu()
 
+
+    //Asignamos el id a especie
+
+    this.especieid = nuno2.animales.especie_id_especie_id
+
+    this.numeroespecie = this.especieid
+
+    //Metodo de buscar especie
+
+    this.buscarespecie()
+
   })
 } 
 
@@ -232,6 +252,12 @@ public buscardu(){
     this.nombre_dueno = nuno5.dueno.nombre_completo
     this.duenotelefono= nuno5.dueno.telefono
     this.duenocorreo= nuno5.dueno.correo
+  })
+}
+
+public buscarespecie(){
+  this.buscarservice.getunaespecie(this.numeroespecie).subscribe((nuno6 : any )=>{
+    this.nombre_especie = nuno6.especies.nombre_especie
   })
 }
 

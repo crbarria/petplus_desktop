@@ -145,6 +145,10 @@ export class BuscarService {
     return this.http.get<ConsuProcedimiento>(this.URLconprocedimiento + nombre)
   }
 
+  getunaespecie(nombre :string){
+    return this.http.get<Especie>(this.URLespecie + nombre)
+  }
+
 
 
 
