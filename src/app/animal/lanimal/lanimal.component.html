@@ -132,15 +132,20 @@
           id="tipo_sangre" required [(ngModel)]="model1.tipo_sangre" name="tipo_sangre" style="margin-left: 30px;"
           required #tipo_sangre="ngModel" />
 
+          <label for="fecha_nac"> </label>
+          <input class="form-control" class="col-3" placeholder="Ingrese la fecha de nacimiento" type="text"
+            id="fecha_nac" required [(ngModel)]="model1.fecha_nac" name="fecha_nac" style="margin-left: 30px;"
+            required #fecha_nac="ngModel" />
+
         <br>
         <br>
 
-        <div *ngIf="!nombre.valid &&  !n_microchip.valid && !tipo_sangre.valid">
+        <div *ngIf="!nombre.valid &&  !n_microchip.valid && !tipo_sangre.valid && !fecha_nac.valid">
           <button class="btn btn-primary boton_guardar" disabled>Guardar</button>
         </div>
 
 
-        <div *ngIf="nombre.valid &&  n_microchip.valid && tipo_sangre.valid">
+        <div *ngIf="nombre.valid &&  n_microchip.valid && tipo_sangre.valid && fecha_nac.valid">
           <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
         </div>
 

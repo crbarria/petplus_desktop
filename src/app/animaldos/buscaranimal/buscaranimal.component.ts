@@ -247,6 +247,7 @@ public buscar(){
   })
 } 
 
+
 public buscardu(){
   this.buscarservice.getundueno(this.numerodueno).subscribe((nuno5 : any)=>{
     this.nombre_dueno = nuno5.dueno.nombre_completo

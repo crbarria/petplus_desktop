@@ -10,7 +10,8 @@ export class Animal {
         public especie_id_especie_id: number,
         public estado_id_estado_id: number,
         public sexo_id_sexo_id: number,
-        public tipo_sangre: string
+        public tipo_sangre: string,
+        public fecha_nac:string
 
     ){}
 
