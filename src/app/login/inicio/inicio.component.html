@@ -4,27 +4,36 @@
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
 
-                <img src="../../../assets/image/Petplus icon.png" alt="" width="130px" height="130px" style="margin-left: 250px; ">
+                <img src="../../../assets/image/Petplus icon.png" alt="" width="130px" height="130px"
+                    style="margin-left: 250px; ">
 
                 <div id="login-box" class="col-md-12">
-                    <form id="login-form" class="form">
-                        <h3 class="text-center ">Bienvenid@ a PetPlus</h3>
-                        <br>
-                        <div class="form-group">
-                            <label for="username" class="">Nombre de usuario:</label><br> <br>
-                            <input type="text" name="username" id="username" class="form-control"><br>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="">Contraseña:</label><br> <br>
-                            <input type="password" name="password" id="password" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <br>
-                            <input type="submit" name="submit" class="btn botonpet btn-md" value="Iniciar sesion">
-                        </div>
-                        
-                        <br>
-                    </form>
+
+                    <br>
+                   
+                    
+
+                    <h4 style="text-align: center;">¡Bienvenid@ a petplus!</h4>
+                    <br>
+                    <div>
+                    <label style="text-align: center;">ID de empleado</label>
+                    <br>
+                    <input type="text"  class="form-control" [(ngModel)]="buscar_input"   placeholder="Ingrese su numero de empleado" />
+                    </div>
+                    <br>
+                    <label style="text-align: center;">Nombre de usuario</label>
+                    <br>
+                    <input type="text"  class="form-control" [(ngModel)]="usuario"   placeholder="Ingrese su nombre de usuario" />
+                    <br>
+                    <label style="text-align: center;">Contraseña</label>
+                    <br>
+                    <input type="password"  class="form-control" [(ngModel)]="contrasena"   placeholder="Ingrese su contraseña" />
+                    <br>
+                    <br>
+                    <button (click)="buscar()" class="btn iniciose" type="button" style="margin-left: 234px;">Iniciar sesión</button>
+           
+
+
                 </div>
             </div>
         </div>

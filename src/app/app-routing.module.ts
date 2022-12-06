@@ -32,7 +32,7 @@ const routes: Routes = [
     component:ListempComponent
   },
   {
-    path:'login',
+    path:'',
     component:InicioComponent
   },
   {
