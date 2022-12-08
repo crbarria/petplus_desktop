@@ -56,15 +56,12 @@
 
 
 
-
-
-
-
-
-
-
-
             </form>
+
+            <div>
+                <br>
+                <button (click)="ventanacrear()" class="boton_guardar">Crear un nuevo usuario</button>
+            </div>
 
 
 
@@ -74,36 +71,37 @@
         <br>
         <br>
 
-
-
-        <table class="table table-hover">
+        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger"  class="table table-dark" style="width:60%">
             <thead>
                 <tr>
-                    <th scope="col">Nombre empleado</th>
-                    <th scope="col">Tipo de trabajador</th>
-                    <th scope="col">Eliminar</th>
-
-
+                    <th>
+                      Segunda clave
+                    </th>
+                    <th>
+                      Fecha de atención
+                    </th>
+                    <th>
+                        Eliminar
+                    </th>
+                  
+                 
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let emps of emplist">
-
-
-
-                    <td class="negritas">{{emps.nombre_empleado}}</td>
-
-                    <td class="negritas">{{emps.tipo_emp}}</td>
-
-                    <br>
-                    <button (click)="eliminaremp(emps)" class="btn boton-eliminar" type="button">Eliminar</button>
-
+                    <td>
+                        {{emps.nombre_empleado}}
+                    </td>
+                    <td>
+                        {{emps.tipo_emp}}
+                    </td>
+                    <td>
+                        <button (click)="eliminaremp(emps)" class="btn boton-eliminar" type="button">Eliminar</button>
+                    </td>
+                  
+                
             </tbody>
         </table>
-
-
-        <!--Se agrega un nuevo procedimiento-->
-        <br>
 
 
     </div>

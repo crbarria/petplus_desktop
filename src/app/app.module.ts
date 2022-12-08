@@ -21,6 +21,7 @@ import { HorasModule } from './horas/horas.module';
 import { ListhorasComponent } from './horas/listhoras/listhoras.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
+import { ListuserComponent } from './usuario/listuser/listuser.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DataTablesModule } from 'angular-datatables';
     ListproceComponent,
     ListempComponent,
     InicioComponent,
-    ListhorasComponent
+    ListhorasComponent,
+    ListuserComponent
     
   ],
   imports: [

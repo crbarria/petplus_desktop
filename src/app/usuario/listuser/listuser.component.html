@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!-- Sidebar -->
+<div class="w3-sidebar barra w3-bar-block" style="width:15%">
+    <section class="letra1">
+        <img src="https://i.postimg.cc/R0qSW-vfF/01.png" width="250" height="250" class="d-inline-block align-center"
+            alt="" loading="lazy" style="margin-top: 100px;">
+        <br>
+        <br>
+        <h1 class="letra1">¡Bienvenido Usuari@!</h1>
+        <a href="menu" type="button" class="btn btn-primary boton_menu btn-lg">MENU PRINCIPAL</a>
+
+
+        <button type="button" (click)="retroceder()"
+            class="btn btn-primary boton_menu btn-lg alejar_boton">Volver a empleados</button>
+
+    </section>
+</div>
+
+
+
+
+<div style="margin-left:15%">
+
+    <div class="w3-container">
+
+        <h1 class="destacado" style="margin-bottom: 50px;">Añadir un usuario</h1>
+
+
+
+        <form (ngSubmit)="onSubmit()">
+
+
+            <select style="margin-right: 30px;" class="options" name="emp_id_emp_id" [(ngModel)]="model.emp_id_emp_id"
+                (change)="cambiaremp($event)">
+                <option>Seleccione el trabajador</option>
+                <option value={{emps.id_emp}} *ngFor="let emps of emplist">
+
+                    {{emps.nombre_empleado}}
+                </option>
+            </select>
+
+
+            <label for="usuario"> </label>
+            <input placeholder="Ingrese un nombre de usuario" class="form-control" class="col-2" type="text"
+                id="usuario" required [(ngModel)]="model.usuario" name="usuario" #usuario="ngModel"
+                style="margin-right: 50px;" />
+
+            <label for="contrasena"> </label>
+            <input placeholder="Ingrese una contraseña" class="form-control" class="col-2" type="text" id="contrasena"
+                required [(ngModel)]="model.contrasena" name="contrasena" #contrasena="ngModel"
+                style="margin-right: 50px;" />
+
+
+
+
+            <div *ngIf="usuario.invalid && contrasena.invalid">
+                <br>
+                <button disabled class="boton_apagado">Añadir Empleado</button>
+            </div>
+
+
+
+            <div *ngIf="usuario.valid && contrasena.valid">
+                <br>
+                <button class="boton_guardar">Añadir Empleado</button>
+            </div>
+
+        </form>
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+    
+
+        <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-dark" style="width:60%">
+            <thead>
+                <tr>
+                    <th>
+                        ID de empleado
+                    </th>
+                    <th>
+                        Nombre de usuario
+                    </th>
+                    <th>
+                        Eliminar
+                    </th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let users of userlist">
+                    <td>
+                        {{users.id_usuario}}
+                    </td>
+                    <td>
+                        {{users.usuario}}
+                    </td>
+                    <td>
+                        <button (click)="eliminaruser(users)" class="btn boton-eliminar" type="button">Eliminar</button>
+                    </td>
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+</div>

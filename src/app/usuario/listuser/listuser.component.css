@@ -1,0 +1,69 @@
+.barra{
+    background-color: #7ed957;
+}
+
+.letra1{
+    color: white;
+    font-weight: bold;
+}
+
+.logo{
+    margin-top: 100px;
+}
+
+.boton_menu{
+    margin-top: 20px;
+    margin-left: 15px;
+    color:  #7ed957;
+    background-color: white;
+    font-weight: bold;
+}
+
+.boton_guardar{
+
+    background-color:  #18246e;
+    color: white;
+    
+    border-radius: 5px;
+    size: 10px;
+}
+
+.boton_apagado{
+
+    background-color:  #18246e;
+    color: white;
+    opacity: 50%;
+    border-radius: 5px;
+    size: 10px;
+}
+
+
+.options{
+
+    color:  black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.destacado{
+    font-weight: bold;
+    color: #18246e;
+
+}
+
+.alejar{
+    margin-right: 50px;
+}
+
+.btn-danger{
+    color: red;
+}
+
+.boton-eliminar{
+    background-color: red;
+    color: white;
+}
+
+.alejar_boton{
+    margin-top: 193px;
+}

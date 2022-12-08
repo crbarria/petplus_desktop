@@ -206,6 +206,8 @@ public nombre_especie:string=""
 
 //Finaliza la busqueda de especie 
 
+public fechanac:string=""
+
 public buscar(){
   this.buscarservice.getunanimal(this.buscar_input2).subscribe((nuno2:any)=>{
     console.log(nuno2)
@@ -218,6 +220,7 @@ public buscar(){
     this.estadonombre = nuno2.animales.estado_id_estado_id
     this.generonombre = nuno2.animales.sexo_id_sexo_id
     this.ntipo_sangre = nuno2.animales.tipo_sangre
+    this.fechanac = nuno2.animales.fecha_nac
 
 
 

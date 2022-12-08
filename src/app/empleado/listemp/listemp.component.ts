@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { EmpleadoService } from '../empleadoservice/empleado.service';
 import { Empleado } from '../models/empleado';
 
@@ -29,9 +31,20 @@ export class ListempComponent implements OnInit {
   public tipo_empleado: Array<any>=['Veterinario(a)','Técnico(a) Veterinario(a)','Secretario(a)','Recepcionista']
 
 
-  constructor(private empservice: EmpleadoService) { }
+  constructor(private empservice: EmpleadoService, private router:Router) { }
+
+
+    
+  dtoptions:DataTables.Settings={};
+  dtTrigger:Subject<any>=new Subject<any>();
+
 
   ngOnInit(): void {
+
+    this.dtoptions={
+      pagingType:'simple_numbers'
+    };
+
     this.listaemp()
     this.listtipo()
   }
@@ -44,6 +57,10 @@ export class ListempComponent implements OnInit {
       this.emplist = nuno.emps
 
       console.log(this.emplist)
+
+      this.dtTrigger.next(null);
+
+
     })
   }
 
@@ -54,6 +71,9 @@ export class ListempComponent implements OnInit {
       this.listtipoemp = nuno2.tipoemps
 
       console.log(this.listtipoemp)
+
+
+
 
     })
   }
@@ -90,6 +110,11 @@ export class ListempComponent implements OnInit {
   confiragregar(){
     alert("¡Empleado agregado!");
     location.reload()
+  }
+
+
+  ventanacrear(){
+    this.router.navigate(['crearusuario'])
   }
 
 }

@@ -7,6 +7,7 @@ import { ListhorasComponent } from './horas/listhoras/listhoras.component';
 import { InicioComponent } from './login/inicio/inicio.component';
 import { MenuComponent } from './menu/menu/menu.component';
 import { ListproceComponent } from './procedimiento/listproce/listproce.component';
+import { ListuserComponent } from './usuario/listuser/listuser.component';
 
 const routes: Routes = [
 
@@ -38,6 +39,12 @@ const routes: Routes = [
   {
     path:'reserva',
     component:ListhorasComponent
+  },
+  {
+
+    path:'crearusuario',
+    component:ListuserComponent
+
   }
   
 
