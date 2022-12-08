@@ -179,4 +179,13 @@ export class BuscarService {
     return this.http.patch<Animal>(this.URLanimal, animal)
   }
 
+
+
+  //Eliminar consulta procedimiento
+
+  deleteprocedimiento(id_consulta_procedimiento:number):Observable<ConsuProcedimiento>{
+    return this.http.delete<ConsuProcedimiento>(this.URLconprocedimiento+id_consulta_procedimiento)
+  }
+    
+
 }
