@@ -350,11 +350,46 @@ public segundalist:any;
 onSubmit4() {
   console.log(this.model3)
 
-  this.buscarservice.crearconsultaproce(this.model3).subscribe((resultado: ConsuProcedimiento) => {
+  this.buscarservice.crearconsultaproce(this.model3).subscribe((resultado: any) => {
     console.log(resultado)
+
+    if (resultado.message="Success"){
+
+      this.confiragregarConsu()
+
+    }
+    else{
+
+      alert("Ha ocurrido un error, verifique que los campos esten rellenados")
+
+    }
+
   })
 
 }
+
+
+confiragregarConsu(){
+  alert("¡Consulta agregado correctamente!");
+  location.reload()
+}
+
+
+
+//Eliminar 
+
+eliminarproce(procedimiento : ConsuProcedimiento){
+  this.buscarservice.deleteprocedimiento(procedimiento.id_consulta_procedimiento).subscribe();
+
+  this.confirmarelminar()
+
+}
+
+confirmarelminar(){
+alert("¡Consulta eliminada!");
+location.reload()
+}
+
 
 
 //Modelo para actualizar

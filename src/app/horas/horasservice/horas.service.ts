@@ -17,14 +17,14 @@ export class HorasService {
 
   */
 
-  URLTEST: string = "http://127.0.0.1:8000/app_reserva/reserva_horas/100";
+  URLTEST: string = "https://127.0.0.1:8000/app_reserva/reserva_horas/100";
 
   
 
   //NUBE
 
-  URLreservahoras:string ="http://api-petplus-duocuc.herokuapp.com/app_reserva/reserva_horas/";
-  URLestadohoras:string= "http://api-petplus-duocuc.herokuapp.com/app_estado_hora/estado_hora/";
+  URLreservahoras:string ="https://api-petplus-duocuc.herokuapp.com/app_reserva/reserva_horas/";
+  URLestadohoras:string= "https://api-petplus-duocuc.herokuapp.com/app_estado_hora/estado_hora/";
 
 
   

@@ -13,9 +13,9 @@ import { usuarioI } from '../models/usuario.interface';
 })
 export class LoginService {
 
-  URLusuario: string = "http://api-petplus-duocuc.herokuapp.com/app_usuario/usuario/"
+  URLusuario: string = "https://api-petplus-duocuc.herokuapp.com/app_usuario/usuario/"
 
-  pruebas: string ="http://api-petplus-duocuc.herokuapp.com/app_usuario/"
+  pruebas: string ="https://api-petplus-duocuc.herokuapp.com/app_usuario/"
 
   constructor(private http: HttpClient) { }
 

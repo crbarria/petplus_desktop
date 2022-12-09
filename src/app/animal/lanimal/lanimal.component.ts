@@ -278,6 +278,9 @@ export class LanimalComponent implements OnInit {
 
     this.serviceanimal.crearconsultaproce(this.model3).subscribe((resultado: ConsuProcedimiento) => {
       console.log(resultado)
+
+      
+
     })
 
   }

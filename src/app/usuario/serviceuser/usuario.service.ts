@@ -10,9 +10,9 @@ import { Usuario } from '../models/usuario';
 export class UsuarioService {
 
 
-  URLusuario: string = "http://api-petplus-duocuc.herokuapp.com/app_usuario/usuario/"
+  URLusuario: string = "https://api-petplus-duocuc.herokuapp.com/app_usuario/usuario/"
 
-  URLempleado:string = "http://api-petplus-duocuc.herokuapp.com/app_emp/emp/"
+  URLempleado:string = "https://api-petplus-duocuc.herokuapp.com/app_emp/emp/"
 
 
 

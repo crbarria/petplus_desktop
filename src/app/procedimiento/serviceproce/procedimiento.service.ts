@@ -16,7 +16,7 @@ export class ProcedimientoService {
 
   //NUBE
 
-  URLprocedimiento:string="http://api-petplus-duocuc.herokuapp.com/app_procedimiento/procedimiento/";
+  URLprocedimiento:string="https://api-petplus-duocuc.herokuapp.com/app_procedimiento/procedimiento/";
 
 
 

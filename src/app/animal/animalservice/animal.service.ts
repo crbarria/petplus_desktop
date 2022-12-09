@@ -26,7 +26,7 @@ export class AnimalService {
   // URLdueno: string = "http://127.0.0.1:8000/app_dueno/dueno/"
 
   // NUBE 
-  URLdueno: string = "http://api-petplus-duocuc.herokuapp.com/app_dueno/dueno/";
+  URLdueno: string = "https://api-petplus-duocuc.herokuapp.com/app_dueno/dueno/";
 
 
   //Obetenemos la información del animal
@@ -45,12 +45,12 @@ export class AnimalService {
 
   //NUBE
 
-  URLanimal: string= "http://api-petplus-duocuc.herokuapp.com/app_animal/animal/";
-  URLcolor: string= "http://api-petplus-duocuc.herokuapp.com/app_color/color/";
-  URLsexo: string = "http://api-petplus-duocuc.herokuapp.com/app_sexo/sexo/";
-  URLespecie:string ="http://api-petplus-duocuc.herokuapp.com/app_especie/especie/";
-  URLraza: string = "http://api-petplus-duocuc.herokuapp.com/app_raza/raza/";
-  URLestado: string = "http://api-petplus-duocuc.herokuapp.com/app_estado/estado/"
+  URLanimal: string= "https://api-petplus-duocuc.herokuapp.com/app_animal/animal/";
+  URLcolor: string= "https://api-petplus-duocuc.herokuapp.com/app_color/color/";
+  URLsexo: string = "https://api-petplus-duocuc.herokuapp.com/app_sexo/sexo/";
+  URLespecie:string ="https://api-petplus-duocuc.herokuapp.com/app_especie/especie/";
+  URLraza: string = "https://api-petplus-duocuc.herokuapp.com/app_raza/raza/";
+  URLestado: string = "https://api-petplus-duocuc.herokuapp.com/app_estado/estado/"
 
 
   //Obtenemos la informacion de la consulta y reserva (Horas)
@@ -66,8 +66,8 @@ export class AnimalService {
 
   //NUBE
 
-  URLconsultareserva:string="http://api-petplus-duocuc.herokuapp.com/app_consulta_reserva/consulta_reserva/";
-  URLreservahoras:string="http://api-petplus-duocuc.herokuapp.com/app_reserva/reserva_horas/";
+  URLconsultareserva:string="https://api-petplus-duocuc.herokuapp.com/app_consulta_reserva/consulta_reserva/";
+  URLreservahoras:string="https://api-petplus-duocuc.herokuapp.com/app_reserva/reserva_horas/";
 
   //Obetenemos la informacion del procedimiento
 
@@ -81,9 +81,9 @@ export class AnimalService {
   */
   //NUBE
 
-  URLconprocedimiento:string ="http://api-petplus-duocuc.herokuapp.com/app_consulta_procedimiento/consulta_procedimiento/";
-  URLprocedimiento:string ="http://api-petplus-duocuc.herokuapp.com/app_procedimiento/procedimiento/";
-  URLemp:string = "http://api-petplus-duocuc.herokuapp.com/app_emp/emp/";
+  URLconprocedimiento:string ="https://api-petplus-duocuc.herokuapp.com/app_consulta_procedimiento/consulta_procedimiento/";
+  URLprocedimiento:string ="https://api-petplus-duocuc.herokuapp.com/app_procedimiento/procedimiento/";
+  URLemp:string = "https://api-petplus-duocuc.herokuapp.com/app_emp/emp/";
 
 
   constructor(private http: HttpClient) { }

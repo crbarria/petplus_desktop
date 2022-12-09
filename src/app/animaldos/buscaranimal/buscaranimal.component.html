@@ -79,6 +79,9 @@
               <th>
                 Observacion
               </th>
+              <th>
+                Eliminar
+              </th>
           </tr>
       </thead>
       <tbody>
@@ -98,6 +101,10 @@
               <td>
                 {{consuproce.observaciones}}
               </td>
+              <td>
+                <button (click)="eliminarproce(consuproce)" class="btn boton-eliminar"
+                type="button">Eliminar</button> 
+              </td>
           </tr>
       </tbody>
   </table>
@@ -113,20 +120,20 @@
 
         <label for="fecha_pro"> </label>
         <input placeholder="Ingrese la fecha de atención" class="form-control" class="col-3" type="text"
-          id="fecha_pro" required [(ngModel)]="model3.fecha_pro" name="fecha_pro" #name="ngModel"
+          id="fecha_pro" required [(ngModel)]="model3.fecha_pro" name="fecha_pro" #fecha_pro="ngModel"
           style="margin-right: 30px;" />
   
   
         <label for="motivo_consulta"> </label>
         <input placeholder="Ingrese el motivo de la consulta" class="form-control" class="col-3" type="text"
-          id="motivo_consulta" required [(ngModel)]="model3.motivo_consulta" name="motivo_consulta" #name="ngModel"
+          id="motivo_consulta" required [(ngModel)]="model3.motivo_consulta" name="motivo_consulta" #motivo_consulta="ngModel"
           style="margin-right: 30px;" />
   
         
   
         <label for="peso"> </label>
         <input placeholder="Ingrese el peso del animal" class="form-control" class="col-1" type="text" id="peso"
-          required [(ngModel)]="model3.peso" name="peso" #name="ngModel" /> KG
+          required [(ngModel)]="model3.peso" name="peso" #name="ngModel" #peso="ngModel" /> KG
 
           <br>
           <br>
@@ -134,7 +141,7 @@
 
         <label for="observaciones"> </label>
         <input placeholder="Ingrese las observaciones" class="form-control" class="col-3" type="text"
-          id="observaciones" required [(ngModel)]="model3.observaciones" name="observaciones" #name="ngModel" class="grande"
+          id="observaciones" required [(ngModel)]="model3.observaciones" name="observaciones" #observaciones="ngModel" class="grande"
            style="margin-right: 50px;" class="inputgrande"/>
   
         
@@ -172,7 +179,16 @@
        
       
   
-        <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
+        <div *ngIf="fecha_pro.valid && motivo_consulta.valid && peso.valid && observaciones.valid ">
+          <br>
+          <button class="btn btn-primary boton_guardar" type="submit">Guardar</button>
+        </div>
+        <br>
+        <br>
+
+        <div *ngIf="!fecha_pro.valid && !motivo_consulta.valid   && !observaciones.valid ">
+          <button disabled class="btn btn-primary boton_guardar"> Guardar </button>
+        </div>
 
         <br>
         <br>
